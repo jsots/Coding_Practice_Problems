@@ -4,21 +4,22 @@ let isValid = function(s) {
         return false
     }
     for (let i = 0; i < s.length; i++) {
-        if (s.charAt(i) === "(" || s.charAt(i) === "{" || s.charAt(i) === "[") {
-            stack.push(s.charAt(i))
-        } else if (s.charAt(i) === ")") {
+        let current = s.charAt(i)
+        if (current === "(" || current === "{" || current === "[") {
+            stack.push(current)
+        } else if (current === ")") {
             if (stack[stack.length-1] === "(") {
                 stack.pop()
             } else {
                 return false
             }
-        } else if (s.charAt(i) === "]") {
+        } else if (current === "]") {
             if (stack[stack.length-1] === "[") {
                 stack.pop()
             } else {
                 return false
             }
-        } else if (s.charAt(i) === "}") {
+        } else if (current === "}") {
             if (stack[stack.length-1] === "{") {
                 stack.pop()
             } else {
