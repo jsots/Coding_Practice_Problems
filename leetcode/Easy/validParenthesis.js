@@ -1,3 +1,5 @@
+// Best solution for space O(n)
+
 let isValid = function(s) {
     let stack = []
     if (s.length % 2 !== 0) {
