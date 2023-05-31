@@ -12,11 +12,13 @@ let value = 0
 
 let romanToInt = function(s) {
     value = 0;
-    for(let i = 0; i < s.length; i+=1) {
-        symbols[s[i]] < symbols[s[i+1]] ? value -= symbols[s[i]]: value += symbols[s[i]]
+    for(let i = 0; i < s.length; i+=1){
+        let current = s[i]
+        let next = s[i+1]
+        symbols[current] < symbols[next] ? value -= symbols[current]: value += symbols[current]
     }
     return value
-}
+};
 
 console.log(romanToInt("III"))
 console.log(romanToInt("LVIII"))
