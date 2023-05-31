@@ -5,22 +5,23 @@ let isValid = function(s) {
     }
     for (let i = 0; i < s.length; i++) {
         let current = s.charAt(i)
+        let topOfStack = stack[stack.length-1]
         if (current === "(" || current === "{" || current === "[") {
             stack.push(current)
         } else if (current === ")") {
-            if (stack[stack.length-1] === "(") {
+            if (topOfStack === "(") {
                 stack.pop()
             } else {
                 return false
             }
         } else if (current === "]") {
-            if (stack[stack.length-1] === "[") {
+            if (topOfStack === "[") {
                 stack.pop()
             } else {
                 return false
             }
         } else if (current === "}") {
-            if (stack[stack.length-1] === "{") {
+            if (topOfStack === "{") {
                 stack.pop()
             } else {
                 return false
