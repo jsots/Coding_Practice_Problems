@@ -1,3 +1,5 @@
+// Below is 53.71% runtime and 40.98% memory.
+
 var removeElement = function(nums, val) {
     let ans = []
     let k = 0
@@ -13,17 +15,19 @@ var removeElement = function(nums, val) {
     return k;
 };
 
-// Below solution improves the memory but worsens the run time. run becomes 25.83 and memory becomes 91.61
+// below is 68.37% runtime and 86.49% memory.
 
 var removeElement2 = function(nums, val) {
     let ans = []
+    let k = 0
     for (let j = 0; j < nums.length; j++) {
       if (nums[j] !== val) {
           ans.push(nums[j])
+          k++
         } 
     }
-    for (let i = 0; i<ans.length; i++) {
+    for (let i = 0; i<k; i++) {
         nums[i] = ans[i]
     }
-    return ans.length;
+    return k;
 };
