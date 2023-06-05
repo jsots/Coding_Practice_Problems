@@ -11,3 +11,15 @@ var containsDuplicate = function(nums) {
     }
     return false
 };
+
+// 63.29% runtime and 69.71% memory
+var containsDuplicate2 = function(nums) {
+    let numberCounter = {}
+    for (let i = 0; i < nums.length; i++) {
+        if (numberCounter[nums[i]]) {
+            return true
+        }
+        numberCounter[nums[i]] = 1
+    }
+    return false
+};
