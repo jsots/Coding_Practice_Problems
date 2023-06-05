@@ -15,3 +15,21 @@ var arraySign = function(nums) {
         return -1
     }
 };
+
+// 75.23% runtime and 58.92% memory
+var arraySign2 = function(nums) {
+    let product = 1
+    let containsZero = false
+    let signFunc = Math.sign
+    nums.forEach((num) => {
+        if (num === 0) {
+            containsZero = true
+        }
+        product *= num
+    })
+
+    if (containsZero) {
+        return 0
+    }
+    return signFunc(product)
+};
