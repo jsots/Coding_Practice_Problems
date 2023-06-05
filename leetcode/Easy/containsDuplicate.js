@@ -1,3 +1,5 @@
+// 12.83% runtime and 99.87% memory
+
 var containsDuplicate = function(nums) {
     let len = nums.length
     for (let i = 0; i < len; i++) {
