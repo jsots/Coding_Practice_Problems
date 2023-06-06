@@ -1,3 +1,5 @@
+// Runtime 23.9% and Memory 90.69%
+
 var mySqrt = function(x) {
     let i = 1
     while (i*i <= x) {
@@ -8,3 +10,5 @@ var mySqrt = function(x) {
     }
     return i-1
 };
+
+// 
