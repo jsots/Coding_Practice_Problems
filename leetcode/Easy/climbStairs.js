@@ -1,13 +1,14 @@
+// Runtime 16.49% and Memory 70.16%
+
 var climbStairs = function(n) {
-    let ans = 0
-    if (n === 2) {
-        return 2
+    let one = 1
+    let two = 1
+
+    for (let i = 0; i<n-1; i++) {
+        let temp = one
+        one = one + two
+        two = temp
     }
-    if (n % 2 === 0) {
-        ans = 2 + (n-1) + (n-2)*(n-4)
-        return ans
-    } else {
-        ans = 1 + (n-1) + (n-2)*(n-4)
-        return ans
-    }
+
+    return one
 };
