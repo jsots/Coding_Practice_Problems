@@ -1,3 +1,5 @@
+// Runtime - 10.50% and Memory - 56.20%
+
 var majorityElement = function(nums) {
     let numberCounter = {}
     for (let i=0; i<nums.length; i++) {
