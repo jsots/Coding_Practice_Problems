@@ -44,3 +44,18 @@ var convertToTitle = function(columnNumber) {
     }
     return getKeyByValue(alphabet, columnNumber)
 };
+
+// Runtime - 6.44% and Memory - 48.49%
+
+var convertToTitle = function(columnNumber) {
+    // answer is a string
+    let ans = ''
+
+    while(columnNumber>0){
+        let code = (--columnNumber)%26
+        ans = String.fromCharCode(code+65) + ans
+        columnNumber = (columnNumber-code)/26
+    }
+    
+    return ans
+};
