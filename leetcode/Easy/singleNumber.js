@@ -1,10 +1,9 @@
+// Runtime - 77.2% and Memory 86.10%
+
 var singleNumber = function(nums) {
-    nums.sort()
-    for (let i=0; i < nums.length-1; i++) {
-        if (nums[i] === nums[i+1]) {
-            i++
-        } else {
-            return nums[i]
-        }
+    let check = 0
+    for (let i=0; i < nums.length; i++) {
+        check = check ^ nums[i]
     }
+    return check
 };
