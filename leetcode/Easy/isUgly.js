@@ -1,4 +1,4 @@
-
+// Runtime - 62.86% and Memory - 53.32%
 
 var isUgly = function (n) {
     if(n <= 0) return false
