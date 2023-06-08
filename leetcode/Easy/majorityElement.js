@@ -39,3 +39,30 @@ var majorityElement = function(nums) {
     }
     return maxNumber
 };
+
+// Runtime = 96.8% and Memory = 21.54%
+
+var majorityElement = function(nums) {
+    let counter = 0
+    let maxCounter = 0
+    let maxNumber = 0
+    let end = nums.length-1
+    nums.sort()
+    if (nums.length === 1) {
+        return nums[0]
+    }
+    for (let i=0; i < end; i++) {
+        let current = nums[i]
+        let next = nums[i+1]
+        if (current === next){
+            counter += 2
+            if (counter > maxCounter) {
+                maxCounter = counter
+                maxNumber = nums[i]
+            }
+        } else {
+            counter = 0
+        }
+    }
+    return maxNumber
+};
