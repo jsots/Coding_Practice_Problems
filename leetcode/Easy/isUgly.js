@@ -1,15 +1,22 @@
-function isPrime (num) {
-    let mid = num/2
-    if (num < 2) {
-        return true
-    }
-    for (let i = 2; i <= mid; i++) {
-        if (num % i === 0) {
+
+
+var isUgly = function (n) {
+    if(n <= 0) return false
+
+    while (n != 1) {
+        if (n % 2 === 0) {
+            n /= 2
+        } else if (n % 3 === 0) {
+            n /= 3
+        } else if (n % 5 === 0) {
+            n /= 5
+        } else {
             return false
         }
     }
+
     return true
-}
+};
 
 console.log(isPrime(7))
 console.log(isPrime(23))
