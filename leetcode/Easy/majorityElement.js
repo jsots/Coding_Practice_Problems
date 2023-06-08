@@ -68,6 +68,7 @@ var majorityElement = function(nums) {
 };
 
 // Runtime - 98.16% and Memory - 98.43%
+// Boyer-Moore Voting Algorithm
 
 const majorityElement = function(nums) {
     let count = 0;
