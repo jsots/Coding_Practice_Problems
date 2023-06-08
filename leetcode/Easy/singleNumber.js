@@ -7,3 +7,5 @@ var singleNumber = function(nums) {
     }
     return check
 };
+
+console.log(singleNumber([4,1,2,1,2]))
