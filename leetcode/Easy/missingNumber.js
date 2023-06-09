@@ -1,3 +1,5 @@
+// Runtime - 13.10% and Memory - 93.38%
+
 var missingNumber = function (nums) {
     nums.sort()
     let end = nums.length
