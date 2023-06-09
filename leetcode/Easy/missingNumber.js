@@ -7,13 +7,11 @@ var missingNumber = function (nums) {
             return i
         }
     }
-    if (nums.length ===1) {
+    if (nums.length > end) {
+        return end + 1
+    } else {
         return start - 1
     }
-    if (nums.length === 1 && nums[0] !== 0) {
-        return start - 1
-    }
-    return end + 1
 }
 
 console.log(missingNumber([3, 0, 1]))
