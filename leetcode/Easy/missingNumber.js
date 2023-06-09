@@ -7,6 +7,12 @@ var missingNumber = function (nums) {
             return i
         }
     }
+    if (nums.length ===1) {
+        return start - 1
+    }
+    if (nums.length === 1 && nums[0] !== 0) {
+        return start - 1
+    }
     return end + 1
 }
 
