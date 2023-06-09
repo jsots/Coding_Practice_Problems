@@ -7,6 +7,7 @@ var missingNumber = function (nums) {
             return i
         }
     }
+    return end + 1
 }
 
 console.log(missingNumber([3, 0, 1]))
