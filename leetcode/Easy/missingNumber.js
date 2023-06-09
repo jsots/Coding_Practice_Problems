@@ -1,10 +1,8 @@
 var missingNumber = function (nums) {
     nums.sort()
-    let start = nums[0]
-    let end = nums[nums.length-1]
-    for ( let i = start; i < end; i++) {
+    for (let i = 0; i <= nums.length; i++) {
         if (!nums.includes(i)) {
-            return i
+            return i;
         }
     }
     if (nums.length > end) {
