@@ -15,7 +15,7 @@ var fib = function(n) {
     return fib[n-1]
 };
 
-// Runtime 82.80% and Memory - 87.4%
+// Runtime - 82.80% and Memory - 87.4%
 
 var fib = function(n) {
     let a = 0
