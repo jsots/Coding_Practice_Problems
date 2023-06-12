@@ -14,3 +14,23 @@ var fib = function(n) {
     }
     return fib[n-1]
 };
+
+// Runtime 82.80% and Memory - 87.4%
+
+var fib = function(n) {
+    let a = 0
+    let b = 1
+    let c = 1
+    let count = 2
+    if (n === 0 || n === 1) {
+        return n
+    } else {
+        while (count <= n) {
+            c = a + b
+            a = b
+            b = c
+            count++
+        }
+    }
+    return c
+};
