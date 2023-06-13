@@ -1,0 +1,3 @@
+var checkStraightLine = function(coordinates) {
+    
+};
