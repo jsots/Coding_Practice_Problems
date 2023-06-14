@@ -1,3 +1,5 @@
+// Runtime - 62.87% and Memory - 57.66%
+
 var generate = function(numRows) {
     let triangle = []
 
