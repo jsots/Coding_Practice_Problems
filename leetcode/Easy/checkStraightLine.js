@@ -1,4 +1,4 @@
-// Doesnt work for horizontal lines
+// Runtime - 5.20% and Memory - 37.97%
 
 var checkStraightLine = function(coordinates) {
     let deltaY = (coordinates[0][1] - coordinates[1][1])
