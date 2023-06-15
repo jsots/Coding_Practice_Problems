@@ -59,3 +59,12 @@ var isPowerOfTwo = function(n) {
     }
     return false
 };
+
+// Runtime 57.87% and Memory - 76.96%
+
+var isPowerOfTwo = function (n) {
+    if (n === 1) return true;
+    if (n <= 0) return false;
+    if (n % 2 !== 0) return false;
+    return isPowerOfTwo(n / 2);
+};
