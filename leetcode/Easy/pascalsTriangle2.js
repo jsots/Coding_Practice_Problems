@@ -1,4 +1,4 @@
-//
+// Runtime - 94.7% and Memory - 62.61%
 
 var getRow = function(rowIndex) {
     let triangle = []
