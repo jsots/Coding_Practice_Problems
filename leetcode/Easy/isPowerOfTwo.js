@@ -19,7 +19,7 @@ var isPowerOfTwo = function(n) {
 // Runtime - 37.21% and Memory - 60.57%
 
 var isPowerOfTwo = function(n) {
-    let check = 1
+    let check = 1 
     if (n > 1 && n % 2 !== 0) {
         return false
     }
