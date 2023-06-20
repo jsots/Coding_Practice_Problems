@@ -39,3 +39,34 @@ function queryParams(str) {
   
     return ans
   }
+
+
+  const parseQueryParams = (url) => {
+    if (!url.includes('?')) {
+      return {}
+    }
+    const ans = {}
+    const paramString = url.split('?')[1]
+    const entries = paramString.split('&');
+    entries.forEach((entry) => {
+      // the following line of code is equivalent to: 
+      // key = entry.split('=')[0]; 
+      // value = entry.split('=')[1];
+      // it assumes there will be 2 values in the array.
+      const [key, value] = entry.split('=');
+      if (key in ans) {
+          const currentEntry = ans[key]
+  
+          if (typeof currentEntry === 'string') {
+            // just a string; make new array
+            ans[key] = [currentEntry]
+          }
+  
+          ans[key].push(value);
+      } else {
+        ans[key] = value;
+      }
+    });
+  
+    return ans;
+  }
