@@ -70,3 +70,8 @@ function queryParams(str) {
   
     return ans;
   }
+
+  const urlPlain = "https://app.coderpad.io/EF37JADM/interview"
+const urlWithParam = "https://app.coderpad.io/EF37JADM/interview?language=javascript"
+const urlWithMultipleParams = "https://app.coderpad.io/EF37JADM/interview?language=javascript&language=python&user=evan&language=english"
+const malformedUrl = "https://app.coderpad.io/EF37JADM/interview?language==&&blah"
