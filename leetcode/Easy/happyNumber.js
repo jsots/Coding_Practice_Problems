@@ -13,4 +13,17 @@ var isHappy = function(n) {
     if (n < 10) {
         return false
     }
+    let ans = 0
+    let counter = 0
+    while (ans !== 1 || counter > 50) {
+        let onesDigit = n % 10
+        let tensDigit = Math.floor(n/10)
+        ans = (onesDigit**2) + (tensDigit**2)
+        n = ans
+        counter++
+        if (counter === 50) {
+            return false
+        }
+    }
+    return true
 };
