@@ -10,5 +10,7 @@ Return true if n is a happy number, and false if not.
 */
 
 var isHappy = function(n) {
-    
+    if (n < 10) {
+        return false
+    }
 };
