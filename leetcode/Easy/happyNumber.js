@@ -10,20 +10,25 @@ Return true if n is a happy number, and false if not.
 */
 
 var isHappy = function(n) {
-    if (n < 10) {
-        return false
-    }
-    let ans = 0
-    let counter = 0
-    while (ans !== 1 || counter > 50) {
-        let onesDigit = n % 10
-        let tensDigit = Math.floor(n/10)
-        ans = (onesDigit**2) + (tensDigit**2)
-        n = ans
-        counter++
-        if (counter === 50) {
-            return false
+    let visit = new Set()
+
+    while (!visit.has(n)) {
+        visit.add(n)
+        n = sumOfDigitsSquared(n)
+
+        if (n === 1) {
+            return true
         }
     }
-    return true
+    return false
 };
+
+let sumOfDigitsSquared = function(n) {
+    ans = 0
+    while (n > 0) {
+        let digit = n % 10;
+        digit = digit ** 2
+        ans += digit
+        n = Math.floor(n/10)
+    }
+}
