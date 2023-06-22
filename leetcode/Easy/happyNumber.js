@@ -31,4 +31,5 @@ let sumOfDigitsSquared = function(n) {
         ans += digit
         n = Math.floor(n/10)
     }
+    return ans
 }
