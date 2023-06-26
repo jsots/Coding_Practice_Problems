@@ -1,3 +1,5 @@
+// Runtime - 72.45% and Memory 27.69%
+
 var summaryRanges = function(nums) {
     let startOfRange = 0
     let endOfRange = 0 
