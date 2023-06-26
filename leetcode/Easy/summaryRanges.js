@@ -9,7 +9,11 @@ var summaryRanges = function(nums) {
             j++
         }
         endOfRange = nums[j]
-        ranges.push(`${startOfRange}->${endOfRange}`)
+        if (startOfRange !== endOfRange) {
+            ranges.push(`${startOfRange}->${endOfRange}`)
+        } else {
+            ranges.push(`${startOfRange}`)
+        }
         i=j
     }
     return ranges
