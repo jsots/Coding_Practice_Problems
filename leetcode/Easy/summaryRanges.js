@@ -4,12 +4,13 @@ var summaryRanges = function(nums) {
     let ranges = []
     for (let i = 0; i < nums.length; i++) {
         startOfRange = nums[i]
-        let j = 0
+        let j = i
         while (nums[j] + 1 === nums[j+1]) {
             j++
         }
         endOfRange = nums[j]
         ranges.push(`${startOfRange}->${endOfRange}`)
+        i+=j
     }
     return ranges
 };
