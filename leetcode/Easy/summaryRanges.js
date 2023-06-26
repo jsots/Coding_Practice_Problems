@@ -10,7 +10,7 @@ var summaryRanges = function(nums) {
         }
         endOfRange = nums[j]
         ranges.push(`${startOfRange}->${endOfRange}`)
-        i+=j
+        i=j
     }
     return ranges
 };
