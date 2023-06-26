@@ -22,3 +22,26 @@ var summaryRanges = function(nums) {
 };
 
 console.log(summaryRanges([0,1,2,4,5,7]))
+
+
+// Runtime - 89.25% and Memory 97.14%
+
+var summaryRanges = function(nums) {
+    const result = [];
+
+    let a = nums[0];
+
+    for(let i = 0; i < nums.length; i++){
+        if(i == nums.length || nums[i] + 1 != nums[i + 1]){
+            if(a == nums[i]){
+                result.push(a.toString());
+            }else{
+                result.push(`${a}->${nums[i]}`);
+            }
+
+            a = nums[i + 1];
+        }
+    }
+
+    return result;    
+};
