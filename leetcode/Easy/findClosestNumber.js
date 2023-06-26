@@ -8,3 +8,5 @@ var findClosestNumber = function(nums) {
     }
     return shortestDistance
 };
+
+console.log(findClosestNumber([-4,-2,1,4,8]))
