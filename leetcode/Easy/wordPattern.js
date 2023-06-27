@@ -7,7 +7,7 @@ var wordPattern = function(pattern, s) {
     }
     for (let i = 0; i < patternLetters.length; i++) {
         if (dictionary[patternLetters[i]]) {
-            if (!Object.values(dictionary).includes(sLetters[i])) {
+            if (dictionary[patternLetters[i]] !== (sLetters[i])) {
                 return false
             }
         } else {
