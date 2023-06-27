@@ -10,3 +10,13 @@ var isPowerOfThree = function(n) {
 };
 
 console.log(isPowerOfThree(27))
+
+// Even cleaner way below
+
+var isPowerOfThree = function(n) {
+    if(n===0) return false
+    if(n===1) return true
+    if(n%3 ===0) return isPowerOfThree(Math.floor(n/3))
+    else return false
+
+};
