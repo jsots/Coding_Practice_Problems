@@ -10,3 +10,9 @@ var canWinNim = function(n) {
 };
 
 console.log(canWinNim(4))
+
+// Runtime - 87.97% and Memory - 64.47%
+
+var canWinNim = function(n) {
+    return n%4!==0
+};
