@@ -11,6 +11,9 @@ var wordPattern = function(pattern, s) {
                 return false
             }
         } else {
+            if (Object.values(dictionary).includes(sLetters[i])) {
+                return false
+            }
             dictionary[patternLetters[i]] = sLetters[i]
         }
     }
