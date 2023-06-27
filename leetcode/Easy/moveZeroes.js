@@ -1,14 +1,17 @@
 var moveZeroes = function(nums) {
-    let j = 0
-    for (let i = 0; i < nums.length-1; i++) {
-        if (nums[i] === 0) {
-            let temp = nums[i]
-            j++
-            nums[i] = nums[j]
-            nums[j] = temp
+    let zeroes = []
+    let nonZeroes = []
+    nums.forEach( (num) => {
+        if (num === 0) {
+            zeroes.push(num)
+        } else {
+            nonZeroes.push(num)
         }
+    })
+    for (let i = 0; i < zeroes.length; i++) {
+        nonZeroes.push(zeroes[i])
     }
-    return nums
+    return nonZeroes
 };
 
 console.log(moveZeroes([0,1,0,3,12]))
