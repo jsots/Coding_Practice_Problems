@@ -1,3 +1,5 @@
+// Runtime - 77.62% and Memory - 92.20%
+
 var moveZeroes = function(nums) {
     let l = 0
     for (let r = 0; r < nums.length; r++) {
