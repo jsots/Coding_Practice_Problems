@@ -28,3 +28,5 @@ var addBinary = function(a, b) {
     return output;
   };
   
+
+  // Try comverting the strings into base 10 numbers and then adding them. Then you turn them back into binary.

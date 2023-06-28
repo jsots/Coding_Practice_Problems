@@ -1,3 +1,5 @@
+# Runtime - 5.19% and Memory - 6.92%
+
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         nums.sort()
