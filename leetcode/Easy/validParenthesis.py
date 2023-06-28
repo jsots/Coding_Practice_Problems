@@ -1,3 +1,5 @@
+# Runtime - 90.92% and Memory - 13.66%
+
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
