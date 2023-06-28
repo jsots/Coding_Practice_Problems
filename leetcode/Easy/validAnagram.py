@@ -1,4 +1,4 @@
-#
+# Runtime - 70.37% and Memory - 91.25%
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
