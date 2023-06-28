@@ -1,3 +1,5 @@
+# Runtime - 32.48% and Memory - 61.66%
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         ans = []
