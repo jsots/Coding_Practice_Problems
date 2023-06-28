@@ -21,3 +21,15 @@ class Solution:
             if nums[i] == nums[i+1]:
                 return True
         return False
+
+
+# Runtime - 34.32% and Memory - 69.25%
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+        for num in nums:
+            if num in hashset:
+                return True
+            hashset.add(num)
+        return False
