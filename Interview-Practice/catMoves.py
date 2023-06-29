@@ -66,12 +66,6 @@ room_six = [
     [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','>','S',':','^',' ',' ',' ','@']
 ] # computes 9 factorial :)
 
-# directions_to_moves = {
-#     '>': [0, 1],
-#     '<': [0, -1],
-#     '^': [1, 0],
-#     'v': [-1, 0],
-# }
 
 # ev solution: https://app.coderpad.io/NTR4MFZT
 
@@ -83,12 +77,18 @@ def catMoves(room):
     catStack = []
     a = 0
     b = 0
+# directions_to_moves = {
+#     '>': [0, 1],
+#     '<': [0, -1],
+#     '^': [1, 0],
+#     'v': [-1, 0],
+# }
     while currentLocation != "@":
-        print("x", x)
-        print("y", y)
-        print("direction", direction)
-        print("currentLocation", currentLocation)
-
+        # print("x", x)
+        # print("y", y)
+        # print("direction", direction)
+        # print("currentLocation", currentLocation)
+        # print(catStack)
         if currentLocation == "v":
             direction = "d"
         if currentLocation == "^":
@@ -97,6 +97,44 @@ def catMoves(room):
             direction = "r"
         if currentLocation == "<":
             direction = "l"
+        if currentLocation.isnumeric():
+            catStack.append(int(currentLocation))
+        if currentLocation == "-" and len(catStack) > 1:
+            a = catStack.pop(-1)
+            b = catStack.pop(-1)
+            catStack.append(b-a)
+        elif currentLocation == "-" and len(catStack) <= 1: 
+            return "Doraemon looks confused"
+        if currentLocation == "*" and len(catStack) > 1:
+            a = catStack.pop(-1)
+            b = catStack.pop(-1)
+            catStack.append(b*a)
+        elif currentLocation == "*" and len(catStack) <= 1: 
+            return "Doraemon looks confused"
+        if currentLocation == "S" and len(catStack) > 1:
+            a = catStack.pop(-1)
+            b = catStack.pop(-1)
+            catStack.append(a)
+            catStack.append(b)
+        elif currentLocation == "S" and len(catStack) <= 1: 
+            return "Doraemon looks confused"
+        if currentLocation == "$" and len(catStack) >= 1:
+            catStack.pop(-1)
+        elif currentLocation == "$" and len(catStack) == 0: 
+            return "Doraemon looks confused"
+        if currentLocation == ":" and len(catStack) >= 1:
+            a = catStack[-1]
+            catStack.append(a)
+        elif currentLocation == ":" and len(catStack) == 0: 
+            return "Doraemon looks confused"
+        if currentLocation == "?" and len(catStack) >= 1:
+            a = catStack.pop(-1)
+            if a == 0:
+                direction = "r"
+            else:
+                direction = "l"
+        elif currentLocation == "?" and len(catStack) == 0: 
+            return "Doraemon looks confused"
         if direction == "d":
             if y != len(room)-1:
                 y += 1
@@ -117,16 +155,6 @@ def catMoves(room):
                 x -= 1
             else:
                 return "Sad Doraemon"
-        if currentLocation == " ":
-            direction = direction
-        if currentLocation.isnumeric():
-            catStack.append(int(currentLocation))
-        if currentLocation == "-" and len(catStack) > 1:
-            a = catStack.pop(-1)
-            b = catStack.pop(-1)
-            catStack.append(b-a)
-        elif currentLocation == "-" and len(catStack) <= 1: 
-            return "Doraemon looks confused"
         currentLocation = room[y][x]
     if len(catStack) != 0:
         print(f"Row {y}, Column {x}, CatStack: {catStack[-1]}")
@@ -136,7 +164,12 @@ def catMoves(room):
 
 # val_1 if cond else val_2
 
+print(catMoves(room))
+print(catMoves(room_two))
+print(catMoves(room_three))
+print(catMoves(room_four))
 print(catMoves(room_five))
+print(catMoves(room_six))
 
 
 
