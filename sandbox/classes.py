@@ -16,12 +16,16 @@ user = Person(25, 80, 177, "Jon", "Snow", "You know nothing, Jon Snow")
 class Employee:
     # class variable, something you would want applied to all employees
     raise_amount = 1.04
+    num_of_emps = 0
 
     def __init__(self, first, last, pay):
         self.first = first
         self.last = last
         self.pay = pay
         self.email = first + "." + last + "@company.com"
+
+        # Each time you instatiate a new employee, the number will increment. 
+        Employee.num_of_emps += 1
 
     # need to pass an instance, self, otherwise the methods will not work
     def fullname(self):
