@@ -20,6 +20,7 @@ class Employee:
         self.pay = pay
         self.email = first + "." + last + "@company.com"
 
+    # need to pass an instance, self, otherwise the methods will not work
     def fullname(self):
         return '{} {}'.format(self.first, self.last)
 
@@ -30,3 +31,6 @@ emp_2 = Employee("Test", "User", 60000)
 print(emp_1.email)
 print(emp_2.email)
 print(emp_1.fullname())
+
+# can alternatively do this with the class itself. pass in the emp_1 as the instance that gets passed into the method
+print(Employee.fullname(emp_2))
