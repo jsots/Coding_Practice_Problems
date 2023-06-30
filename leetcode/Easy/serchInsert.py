@@ -1,3 +1,5 @@
+# Runtime - 74.76% and Memory - 12.89%
+
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         if target > nums[-1]:
