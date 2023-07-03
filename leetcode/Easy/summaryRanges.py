@@ -1,3 +1,7 @@
+# Runtime 37.24% and Memory - 43.36%
+
+# Important edge case - empty nums array. COrrected in the beginning. 
+
 class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
         if len(nums) == 0:
