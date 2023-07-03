@@ -13,5 +13,5 @@ class Solution:
                     consumed = 0
                     if additionalTank >= 1:
                         additionalTank -= 1
-                        distance += 10
+                        mainTank += 1
             return distance
