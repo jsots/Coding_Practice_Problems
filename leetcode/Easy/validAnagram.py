@@ -44,3 +44,28 @@ class Solution:
             if countS[c] != countT.get(c, 0):
                 return False
         return True
+
+
+# done again, on a diff day:
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        s_set = {}
+
+        if len(s) != len(t):
+            return False
+
+        for char in s:
+            if char in s_set:
+                s_set[char] += 1
+            else:
+                s_set[char] = 1
+        for char in t:
+            if char in s_set:
+                if s_set[char] == 0:
+                    return False
+                s_set[char] -= 1
+            else:
+                return False
+        
+        return True
