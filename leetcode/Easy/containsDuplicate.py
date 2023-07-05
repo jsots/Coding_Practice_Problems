@@ -33,3 +33,15 @@ class Solution:
                 return True
             hashset.add(num)
         return False
+
+
+# Did it again, on another date.
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen_once = set()
+        for num in nums:
+            if num not in seen_once:
+                seen_once.add(num)
+            else:
+                return True
+        return False
