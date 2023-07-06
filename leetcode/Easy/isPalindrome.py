@@ -22,8 +22,8 @@ class Solution:
         j = len(s)-1
         i = 0
         while i < j:
-            if s[i].isalpha():
-                if s[j].isalpha():
+            if s[i].isalnum():
+                if s[j].isalnum():
                     if s[i].lower() == s[j].lower():
                         i+=1
                         j-=1
