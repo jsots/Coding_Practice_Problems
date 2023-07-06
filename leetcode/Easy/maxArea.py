@@ -1,3 +1,5 @@
+# Runtime - 5.5% and Memory - 68.60%
+
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         i = 0
