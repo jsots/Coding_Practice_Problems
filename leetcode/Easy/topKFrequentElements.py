@@ -3,7 +3,7 @@ class Solution:
         seen = {}
         ans = []
         for num in nums:
-            if num not in ans:
+            if num not in seen:
                 seen[num] = 1
             else:
                 seen[num] += 1
