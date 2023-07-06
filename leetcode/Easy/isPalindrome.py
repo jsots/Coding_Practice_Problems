@@ -13,3 +13,24 @@ class Solution:
             else:
                 return False
         return True
+
+
+# Trying again:
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        j = len(s)-1
+        i = 0
+        while i < j:
+            if s[i].isalpha():
+                if s[j].isalpha():
+                    if s[i].lower() == s[j].lower():
+                        i+=1
+                        j-=1
+                    else:
+                        return False
+                else:
+                    j-=1
+            else:
+                i+=1
+        return True
