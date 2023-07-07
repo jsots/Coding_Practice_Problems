@@ -1,3 +1,5 @@
+# Time - O(m*n)
+
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         res = defaultdict(list)
