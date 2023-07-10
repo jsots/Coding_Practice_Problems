@@ -5,12 +5,10 @@ class Solution:
         while sell_day < len(prices):
             if prices[buy_day] < prices[sell_day]:
                 profit = prices[sell_day] - prices[buy_day]
-                if profit > max_profit:
-                    max_profit = profit
-                sell_day += 1
+                max_profit = max(max_profit, profit)
             else:
                 buy_day = sell_day
-                sell_day += 1
+            sell_day += 1
         
         return max_profit
 
