@@ -4,7 +4,7 @@ class Solution:
             "+" : operator.add, 
             "-": operator.sub, 
             "*": operator.mul, 
-            "/": operator.floordiv
+            "/": lambda x, y: math.trunc(x / y)
             }
         # What if not acceptible operand?
         # What kind of division?
