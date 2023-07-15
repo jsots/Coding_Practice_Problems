@@ -20,7 +20,7 @@ class Solution:
                         l += 1
         return ans
 
-# Attempting again. I know im close!
+# Time: O(nlog(n)) | Space: O(n)
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
