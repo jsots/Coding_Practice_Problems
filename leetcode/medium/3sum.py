@@ -39,5 +39,6 @@ class Solution:
                 else:
                     if [nums[i], nums[j], nums[k]] not in ans:
                         ans.append([nums[i], nums[j], nums[k]])
-                    break
+                    j += 1
+                    k -= 1
         return ans
