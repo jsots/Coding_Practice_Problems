@@ -12,7 +12,7 @@ class Solution:
 
 
 # Solved again, on another day and in another way (more optimal likely)
-# Time: O()
+# Time: O(n) | Space: O(n)
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
