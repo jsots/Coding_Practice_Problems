@@ -9,3 +9,14 @@ def insert(root, val):
         root.left = insert(root.left, val)
     
     return root
+
+
+# Find minimum in a BST (will be on the left):
+
+def findMinValue(root):
+    curr = root
+
+    while curr and curr.left:
+        curr = curr.left
+    
+    return curr
