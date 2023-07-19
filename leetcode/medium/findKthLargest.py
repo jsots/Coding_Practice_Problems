@@ -4,7 +4,7 @@ class Solution:
         heapq.heapify(nums)
         ans = []
         while k > 0:
-            ans.append(abs(heapq.heappop(nums)))
+            ans.append(-1 * heapq.heappop(nums))
             k -= 1
         
         return ans[-1]
