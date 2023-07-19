@@ -36,7 +36,7 @@ class Heap:
                 tmp = self.heap[i]
                 self.heap[i] = self.heap[2 * i]
                 self.heap[2 * i] = tmp
-                i = 2 * i + 1
+                i = 2 * i
             else:
                 break
         
