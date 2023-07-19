@@ -13,6 +13,7 @@ class Heap:
             self.heap[i // 2] = tmp
             i = i // 2
     
+    # Time: O(logn) where n is height of tree
     def pop(self, val):
         if len(self.heap) == 1:
             return None
