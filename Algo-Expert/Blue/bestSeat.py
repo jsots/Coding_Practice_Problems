@@ -1,6 +1,7 @@
 
 def bestSeat(seats):
     # Write your code here.
+    # O(n) time and O(1) space
     best_seat = -1
     best_distance = 0
     l = 0
