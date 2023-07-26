@@ -11,12 +11,19 @@ def sweetAndSavory(dishes, target):
     while l < r:
         if dishes[l] > 0:
             break
+        if dishes[r] < 0:
+            break
         cur = dishes[l] + dishes[r]
+        print("cur: ",cur)
         if cur > target:
             r -= 1
-        if cur <= target and abs(target - cur) < best:
-            best = cur
-            best_l, best_r = dishes[l], dishes[r]
-        l += 1
+        if cur <= target:
+            if abs(target - cur) < best:
+                best = abs(target - cur)
+                best_l, best_r = dishes[l], dishes[r]
+            l += 1
+        if best == 0:
+            break
+        print("best: ", best)
         
     return [best_l, best_r]
