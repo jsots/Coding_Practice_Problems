@@ -15,3 +15,18 @@ class Solution:
             return self.searchBST(root.right,val)
         else:
             return self.searchBST(root.left, val)
+
+# My other solution - did all by myself and its v efficient
+
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        def dfs(node):
+            if not node:
+                return None
+            
+            if node.val == val:
+                return node
+            
+            return dfs(node.left) or dfs(node.right)
+
+        return dfs(root)
