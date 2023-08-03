@@ -1,15 +1,12 @@
+#still need to work on this
+
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        div_1 = []
-        div_2 = []
-        for char in str1:
-            if char not in div_1:
-                div_1.append(char)
-        for char in str2:
-            if char not in div_2:
-                div_2.append(char)
-        
-        if div_1 != div_2:
-            return ""
-        else:
-            return "".join(div_1)
+        divisors = []
+        divisor = ""
+        i = 0
+        while i < len(str1) and i < len(str2) and str1[i] == str2[i] and str1[i] not in divisors:
+            divisors.append(str1[i])
+            i += 1
+
+        return "".join(divisors)
