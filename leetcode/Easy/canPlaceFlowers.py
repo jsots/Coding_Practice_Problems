@@ -5,9 +5,17 @@ class Solution:
             cur = flowerbed[i]
             nxt = flowerbed[i + 1]
 
+            if prev == 0 and cur == 0 and i == 1:
+                flowerbed[i - 1] = 1
+                n -= 1
+
+            if cur == 0 and nxt == 0 and i == len(flowerbed) - 2:
+                flowerbed[i + 1] = 1
+                n -= 1
+
             if prev == 0 and cur == 0 and nxt == 0:
                 n -= 1
-                cur = 1
+                flowerbed[i] = 1
             
         
         if n:
