@@ -15,3 +15,12 @@ class Solution:
                 i += 1  # Skip over the space after the word if it exists
         
         return " ".join(reversed(words))
+
+
+# alt solution:
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        words = s.split()
+        reversed_words = words[::-1]
+        return " ".join(reversed_words)
