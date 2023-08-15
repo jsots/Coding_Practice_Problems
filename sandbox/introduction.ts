@@ -12,7 +12,7 @@
 // }
 
 
-export default function linear_search(haystack: number[], needle: number): boolean {
+export function linear_search(haystack: number[], needle: number): boolean {
 
     for (let i = 0; i < haystack.length; ++i) {
         if (haystack[i] === needle) {
@@ -23,3 +23,26 @@ export default function linear_search(haystack: number[], needle: number): boole
     return false;
 }
 console.log(linear_search([1,2,3], 2))
+
+
+export function bs_list(haystack: number[], needle: number): boolean {
+
+    let lo = 0;
+    let hi = haystack.length;
+    do {
+        const m = Math.floor(lo + (hi - lo) / 2);
+        const v = haystack[m];
+
+        if (v === needle) {
+            return true;
+        } else if (v > needle) {
+            hi = m;
+        } else {
+            lo = m + 1;
+        }
+    } while (lo < hi);
+
+    return false;
+}
+
+console.log(bs_list([1,2,3,4,5,6], 5))
