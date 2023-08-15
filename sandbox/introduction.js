@@ -2,7 +2,7 @@
 // const a = [];
 // This is not an array 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.bs_list = exports.linear_search = void 0;
+exports.two_crystal_balls = exports.bs_list = exports.linear_search = void 0;
 // function sum_char(n: string): number {
 //     let sum = 0;
 //     for (let i = 0; i < n.length; ++i) {
@@ -42,3 +42,28 @@ function bs_list(haystack, needle) {
 }
 exports.bs_list = bs_list;
 console.log(bs_list([1, 2, 3, 4, 5, 6], 5));
+// Two Crystal Ball Problem
+// Given two crystal balls that will break if dropped from high enough
+// distance, determine the exact spot in which it will break in the most
+// optimized way.
+function two_crystal_balls(breaks) {
+    var jmpAmount = Math.floor(Math.sqrt(breaks.length));
+    var i = jmpAmount;
+    for (; i < breaks.length; i += jmpAmount) {
+        if (breaks[i]) {
+            break;
+        }
+    }
+    i -= jmpAmount;
+    for (var j = 0; j < jmpAmount && i < breaks.length; ++j, ++i) {
+        if (breaks[i]) {
+            return i;
+        }
+    }
+    return -1;
+}
+exports.two_crystal_balls = two_crystal_balls;
+var test1 = [false, false, false, false, true, true, true, true, true, true, true, true];
+console.log(two_crystal_balls(test1)); // Expected output: 4
+var test2 = [false, false, false, false, false, false, false, true, true, true, true, true];
+console.log(two_crystal_balls(test2)); // Expected output: 7

@@ -46,3 +46,37 @@ export function bs_list(haystack: number[], needle: number): boolean {
 }
 
 console.log(bs_list([1,2,3,4,5,6], 5))
+
+
+// Two Crystal Ball Problem
+
+// Given two crystal balls that will break if dropped from high enough
+// distance, determine the exact spot in which it will break in the most
+// optimized way.
+
+export function two_crystal_balls(breaks: boolean[]): number {
+    const jmpAmount = Math.floor(Math.sqrt(breaks.length));
+
+    let i = jmpAmount;
+    for (; i < breaks.length; i += jmpAmount) {
+        if (breaks[i]) {
+            break;
+        }
+    }
+
+    i -= jmpAmount;
+
+    for (let j = 0; j < jmpAmount && i < breaks.length; ++j, ++i) {
+        if (breaks[i]) {
+            return i;
+        }
+    }
+
+    return -1
+}
+
+const test1 = [false, false, false, false, true, true, true, true, true, true, true, true];
+console.log(two_crystal_balls(test1));  // Expected output: 4
+
+const test2 = [false, false, false, false, false, false, false, true, true, true, true, true];
+console.log(two_crystal_balls(test2));  // Expected output: 7
