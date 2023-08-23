@@ -5,14 +5,16 @@ class Solution:
         for i, num in enumerate(nums):
             if numss:
                 if num <= numss[-1]:
-                    idxes.pop()
-                    numss.pop()
-                    if numss:
-                        if num <= numss[-1]:
-                            idxes.pop()
-                            numss.pop()
-                    idxes.append(i)
-                    numss.append(num)
+                    if len(nums) - i > len(numss):
+                        idxes.pop()
+                        numss.pop()
+                        if numss:
+                            if num <= numss[-1]:
+                                if len(nums) - i > len(numss):
+                                    idxes.pop()
+                                    numss.pop()
+                        idxes.append(i)
+                        numss.append(num)
                 else:
                     idxes.append(i)
                     numss.append(num)
