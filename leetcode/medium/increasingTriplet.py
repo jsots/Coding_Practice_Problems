@@ -1,27 +1,12 @@
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
-        idxes = []
-        numss = []
-        for i, num in enumerate(nums):
-            if numss:
-                if num <= numss[-1]:
-                    if len(nums) - i > len(numss):
-                        idxes.pop()
-                        numss.pop()
-                        if numss:
-                            if num <= numss[-1]:
-                                if len(nums) - i > len(numss):
-                                    idxes.pop()
-                                    numss.pop()
-                        idxes.append(i)
-                        numss.append(num)
-                else:
-                    idxes.append(i)
-                    numss.append(num)
-            else:
-                idxes.append(i)
-                numss.append(num)
-            print(idxes, numss)
-            if len(idxes) == 3:
-                return True
+        for i in range(0, len(nums) - 2):
+            first = nums[i]
+            for j in range(i + 1, len(nums) - 1):
+                if nums[j] > first:
+                    second = nums[j]
+                    for k in range(j + 1, len(nums)):
+                        if nums[k] > second:
+                            return True
+
         return False
