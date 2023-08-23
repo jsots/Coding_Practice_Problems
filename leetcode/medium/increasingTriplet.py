@@ -3,11 +3,14 @@ class Solution:
         idxes = []
         numss = []
         for i, num in enumerate(nums):
-            print(idxes, numss)
             if numss:
                 if num <= numss[-1]:
                     idxes.pop()
                     numss.pop()
+                    if numss:
+                        if num <= numss[-1]:
+                            idxes.pop()
+                            numss.pop()
                     idxes.append(i)
                     numss.append(num)
                 else:
@@ -16,6 +19,7 @@ class Solution:
             else:
                 idxes.append(i)
                 numss.append(num)
+            print(idxes, numss)
             if len(idxes) == 3:
                 return True
         return False
