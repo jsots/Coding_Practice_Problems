@@ -20,11 +20,15 @@ print(ans_2)
 
 test_3 = ['apple', 'banana', 'cherry', 'date']
 # Output: [5, 6, 6, 4]
+ans_3 = [len(word) for word in test_3]
+print(ans_3)
 
 # Uppercase Conversion: Given a list of strings, create a new list that contains the uppercase versions of each string in the original list.
 
 test_4 = ['hello', 'world', 'python']
 # Output: ['HELLO', 'WORLD', 'PYTHON']
+ans_4 = [word.upper() for word in test_4]
+print(ans_4)
 
 # Filter by Length: Given a list of words, create a new list that contains only the words with a length greater than a specified value.
 
