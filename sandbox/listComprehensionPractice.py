@@ -69,6 +69,7 @@ print(ans_8)
 test_9 = 'programming is fun'
 # Output: {'a': 1, 'e': 0, 'i': 3, 'o': 1, 'u': 1}
 vowels = {"a", "e", "i", "o", "u"}
+vowel_count = defaultdict(int)
 ans_9 = {char: test_9.count(char) for char in test_9 if char.lower() in vowels}
 print(ans_9)
 
