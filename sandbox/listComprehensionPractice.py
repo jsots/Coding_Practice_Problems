@@ -13,6 +13,8 @@ print(ans_1)
 
 test_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Output: [2, 4, 6, 8, 10]
+ans_2 = [num for num in test_2 if num % 2 == 0]
+print(ans_2)
 
 # Words Length: Given a list of words, create a new list that contains the lengths of each word in the original list.
 
