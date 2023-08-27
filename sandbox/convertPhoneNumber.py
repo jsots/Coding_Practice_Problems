@@ -1,4 +1,7 @@
 def is_valid_us_phone_number (number):
+    number = number.strip()
+    number = number.split(" ")
+    number = "".join(number)
     if len(number) != 10 or number[0] == "0" or number[0] == "1":
         return False
     return True
