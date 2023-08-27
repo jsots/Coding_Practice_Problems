@@ -1,10 +1,10 @@
-def check_valid_phone_number (number):
+def is_valid_us_phone_number (number):
     if len(number) != 10 or number[0] == "0" or number[0] == "1":
         return False
     return True
 
 def convert_phone_number (number):
-    if check_valid_phone_number(number):
+    if is_valid_us_phone_number(number):
         phone_num = []
         i = 0
         while i < len(number):
