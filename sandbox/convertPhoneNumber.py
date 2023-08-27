@@ -10,12 +10,12 @@ def convert_phone_number (number):
     if is_valid_us_phone_number(number):
         phone_num = []
         i = 0
+
         while i < len(number):
             if i % 3 == 0 and i != 9 and i != 0:
                 phone_num.append("-")
             phone_num.append(number[i])
             i += 1
-
         return "".join(phone_num)
     else:
         return "Not a valid US phone number"
