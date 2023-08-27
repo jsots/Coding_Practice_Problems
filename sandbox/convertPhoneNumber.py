@@ -1,19 +1,24 @@
-def convert_phone_number (number):
+def check_valid_phone_number (number):
     if len(number) != 10 or number[0] == "0" or number[0] == "1":
-        return "Not a valid phone number."
-    
-    phone_num = []
-    counter = 0
-    for num in number:
-        if counter == 3:
-            counter = 0
-            phone_num.append("-")
-        else:
-            counter += 1
-            phone_num.append(num)
+        return False
+    return True
 
-    return "".join(phone_num)
+def convert_phone_number (number):
+    if check_valid_phone_number(number):
+        phone_num = []
+        counter = 0
+        for num in number:
+            if counter == 3:
+                counter = 0
+                phone_num.append("-")
+            else:
+                counter += 1
+                phone_num.append(num)
 
+        return "".join(phone_num)
+    else:
+        return "Not a valid US phone number"
+        
 test_1 = "1234567890"
 test_2 = "9876543210"
 test_3 = "5551234567"
