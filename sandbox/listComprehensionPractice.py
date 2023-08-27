@@ -1,5 +1,5 @@
 # These are practice problems from chat gpt to work on list comprehensions:
-
+from collections import defaultdict
 
 
 # Squares of Numbers: Given a list of numbers, create a new list that contains the squares of each number in the original list.
@@ -51,3 +51,47 @@ test_7 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 # Output: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
 ans_7 = [[row[i] for row in test_7] for i in range(len(test_7))]
 print(ans_7)
+
+
+
+
+# Word Length Frequency
+# Given a list of words, create a dictionary where the keys are word lengths, and the values are the frequencies of words with those lengths in the list.
+
+test_8 = ['apple', 'banana', 'cherry', 'date', 'fig']
+# Output: {5: 1, 6: 2, 4: 1, 3: 1}
+ans_8 = {len(word): test_8.count(word) for word in test_8}
+print(ans_8)
+
+# Vowel Count
+# Given a string, create a dictionary where the keys are vowels (a, e, i, o, u) and the values are the frequencies of those vowels in the string.
+
+test_9 = 'programming is fun'
+# Output: {'a': 1, 'e': 0, 'i': 3, 'o': 1, 'u': 1}
+vowels = {"a", "e", "i", "o", "u"}
+ans_9 = {char: test_9.count(char) for char in test_9 if char.lower() in vowels}
+print(ans_9)
+
+# Character Frequency without Count Method
+# Given a string, create a dictionary where the keys are characters, and the values are the frequencies of those characters in the string. Solve this problem without using the count method.
+# Example:
+# Input: 'programming'
+# Output: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1}
+
+# Matrix Diagonal
+# Given a square matrix (list of lists), create a list containing the elements of the diagonal of the matrix.
+# Example:
+# Input: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# Output: [1, 5, 9]
+
+# Flatten Matrix
+# Given a matrix (list of lists), create a flattened list containing all the elements from the matrix.
+# Example:
+# Input: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Pairs from Two Lists
+# Given two lists, create a list of tuples where each tuple contains one element from each list.
+# Example:
+# Input: [1, 2, 3] and ['a', 'b', 'c']
+# Output: [(1, 'a'), (2, 'b'), (3, 'c')]
