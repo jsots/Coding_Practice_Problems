@@ -35,13 +35,19 @@ print(ans_4)
 test_5 = ['apple', 'banana', 'cherry', 'date'] 
 length = 5
 # Output: ['banana', 'cherry']
+ans_5 = [word for word in test_5 if len(word) > length]
+print(ans_5)
 
 # Character Frequency: Given a string, create a dictionary where keys are characters and values are the frequencies of those characters in the string.
 
 test_6 = 'programming'
 # Output: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1}
+ans_6 = {char: test_6.count(char) for char in test_6}
+print(ans_6)
 
 # Transpose Matrix: Given a matrix (list of lists), create a new matrix that is the transpose of the original matrix.
 
 test_7 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 # Output: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+ans_7 = [[row[i] for row in test_7] for i in range(len(test_7))]
+print(ans_7)
