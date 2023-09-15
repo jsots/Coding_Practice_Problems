@@ -96,3 +96,66 @@ print(ans_9)
 # Example:
 # Input: [1, 2, 3] and ['a', 'b', 'c']
 # Output: [(1, 'a'), (2, 'b'), (3, 'c')]
+
+
+# print("Hello")
+
+# def number_of_points(nums):
+#     intercept_set = set()
+
+#     for num in nums:
+#         step = num[0]
+#         for i in range(num[0], num[1]+1):
+#             intercept_set.add(step)
+#             step += 1
+#     return len(intercept_set)
+
+# # if __name__ == "__main__":
+# #   fptr = open(os.environ['OUTPUT_PATH'], "w")
+
+# #   nums_rows = int(input().strip))
+# #   nums_columns = int(input().strip())
+  
+# #   nums = []
+  
+# #   for _ in range(nums_rows):
+# #     nums.append(list(map(int, input().rstrip().split())))
+  
+# #   result = number_of_points(nums)
+  
+# #   fptr.write(str(result) + "\n")
+  
+# #   # fptr.close()
+
+# print(number_of_points([[3,6], [1,5], [4,7]]))
+# print(number_of_points([[1,3], [5,8]]))
+# print(number_of_points([[-1,3], [5,8]]))
+# # print(number_of_points([[]]))
+# print("Hello")
+
+
+print("Ans below:")
+def merge_intervals(intervals):
+    ans = []
+    i = 0
+
+    while i < len(intervals):
+        temp = []
+        j = i + 1
+        check_top = intervals[i][1]
+        while j < len(intervals) and check_top >= intervals[j][0]:
+            check_top = intervals[j][1]
+            j += 1
+        low = min(intervals[i][0], intervals[j-1][0])
+        high = max(intervals[i][1], intervals[j-1][1])
+        temp.append(low)
+        temp.append(high)
+        ans.append(temp)
+        i = j
+
+    return ans
+
+print(merge_intervals([[1,3], [2,6], [8,10], [15,18]]))
+print(merge_intervals([[1,4], [4,5]]))
+print(merge_intervals([[1,3], [3,5], [4,5]]))
+print(merge_intervals([[1,1], [2,5], [1,2]]))
