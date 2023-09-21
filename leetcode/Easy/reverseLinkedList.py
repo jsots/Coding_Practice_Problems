@@ -16,3 +16,16 @@ class Solution:
         return prev
 
             
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # create a dummy node
+        prev, cur = None, head
+
+        while cur:
+            temp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = temp
+        
+        return prev
