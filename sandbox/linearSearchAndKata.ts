@@ -25,3 +25,25 @@ export function bs_list(haystack: number[], needle: number): boolean {
 
     return false;
 }
+
+export function two_crystal_balls(breaks: boolean[]): number {
+    const jmpAmount = Math.floor(Math.sqrt(breaks.length));
+
+    // Using sqrt will allow for a function that has a better run time than just a linear one. This will be root N big O
+    let i = jmpAmount;
+    for (; i < breaks.length; i += jmpAmount) {
+        if (breaks[i]) {
+            break;
+        }
+    }
+
+    i -= jmpAmount;
+
+    for (let j = 0; j < jmpAmount && i < breaks.length; ++j, ++i) {
+        if (breaks[i]) {
+            return i;
+        }
+    }
+
+    return -1;
+}
