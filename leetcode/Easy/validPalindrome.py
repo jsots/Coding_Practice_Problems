@@ -19,3 +19,26 @@ class Solution:
 def isAlphaNumeric(string):
     code = ord(string)
     return (code >= 48 and code <= 57) or (code >= 65 and code <= 90) or (code >= 97 and code <= 122)
+
+
+# Solved another day
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        i = 0
+        j = len(s) - 1
+
+        while i < j:
+            if s[i].isalnum():
+                if s[j].isalnum():
+                    if s[i].lower() == s[j].lower():
+                        i += 1
+                        j -= 1
+                    else: 
+                        return False
+                else:
+                    j -= 1
+            else:
+                i += 1
+
+        return True
