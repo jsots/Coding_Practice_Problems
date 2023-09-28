@@ -90,3 +90,26 @@ class Solution:
         
         
         return True
+
+
+# Solved using default dict
+
+from collections import defaultdict
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        s_map = defaultdict(int)
+
+        if len(s) != len(t):
+            return False
+
+        for char in s:
+            s_map[char] += 1
+        
+        for char in t:
+            if char not in s_map or s_map[char] == 0:
+                return False
+            s_map[char] -= 1
+        
+        
+        return True
