@@ -39,3 +39,17 @@ for c, s in transactions:
 # Print the total spending for each customer
 for customer, total in customer_spending.items():
     print(f"{customer}: {total}")
+
+from collections import defaultdict
+
+# List of names
+names = ["Alice", "Bob", "Charlie", "Eve", "David", "Daniel"]
+name_index = defaultdict(list)
+
+# Your code here
+for name in names:
+    name_index[name[0]].append(name)
+
+# Print the indexed names
+for letter, name_list in name_index.items():
+    print(f"Names starting with '{letter}': {', '.join(name_list)}")
