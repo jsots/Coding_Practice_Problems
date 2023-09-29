@@ -1,6 +1,6 @@
 # 1. Create a list comprehension that generates a list of all even numbers from 1 to 20.
 
-list_1 = [num for num in range(1, 20) if num % 2 == 0]
+list_1 = [num for num in range(1, 21) if num % 2 == 0]
 print(list_1)
 
 # 2. Write a list comprehension that computes the square of each number in a given list.
@@ -21,14 +21,32 @@ print(list_4)
 
 # 5. Given a list of words, create a list comprehension that returns only the words with a length greater than 5 characters.
 word_list = ["apple", "banana", "cherry", "date", "elderberry"]
+list_5 = [word for word in word_list if len(word) > 5]
+print(list_5)
 
 # 6. Generate a list of the squares of all odd numbers from 1 to 30.
+list_6 = [num ** 2 for num in range(1, 31) if num % 2 == 1]
+print(list_6)
 
 # 7. Write a list comprehension that generates a list of prime numbers from 1 to 50.
+def isPrime(n):
+    for i in range(2, n):
+        if not n % i:
+            return False 
+    return True 
+list_7 = [num for num in range(1,51) if isPrime(num)]
+print(list_7)
 
 # 8. Create a list comprehension that extracts all uppercase letters from a given string.
 input_string = "Hello, World!"
+def isUpper(c):
+    if c == c.upper():
+        return True
+    else:
+        return False 
 
+list_8 = [char for char in input_string if isUpper(char)]
+print(list_8)
 # 9. Generate a list of numbers from 1 to 100 that are divisible by both 3 and 5.
 
 # 10. Given a list with duplicate elements, create a list comprehension to remove duplicates and return a list with only unique elements.
