@@ -11,7 +11,6 @@ def minimumCharactersForWords(words):
     # capital letters? 
     
     master_char = {}
-    ans = []
     
     for word in words:
         current_char = {}
@@ -19,6 +18,8 @@ def minimumCharactersForWords(words):
             current_char[char] = current_char.get(char, 0) + 1 # consulted chat
         for key, value in current_char.items():
             master_char[key] = max(master_char.get(char, 0), value)
+        print("current", current_char)
+        print("master", master_char)
 
     ans = [] 
     # consulted chat
@@ -26,3 +27,6 @@ def minimumCharactersForWords(words):
         ans.extend([key] * value)
 
     return ans
+
+words = ["!!!2", "234", "222", "432"]
+minimumCharactersForWords(words)
