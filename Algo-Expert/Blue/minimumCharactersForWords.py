@@ -26,3 +26,7 @@ def minimumCharactersForWords(words):
         ans.extend([key] * value)
 
     return ans
+
+# Big O
+# Time - O(n) where n is the number of entries in the array
+# Space - O(m) where m is the number of unique characters in the words
