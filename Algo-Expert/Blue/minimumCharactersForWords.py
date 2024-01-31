@@ -17,7 +17,7 @@ def minimumCharactersForWords(words):
         for char in word:
             current_char[char] = current_char.get(char, 0) + 1 # consulted chat
         for key, value in current_char.items():
-            master_char[key] = max(master_char.get(char, 0), value)
+            master_char[key] = max(master_char.get(key, 0), value)
         print("current", current_char)
         print("master", master_char)
 
