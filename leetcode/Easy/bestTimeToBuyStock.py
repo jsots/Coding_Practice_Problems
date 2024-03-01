@@ -46,4 +46,27 @@ class Solution(object):
         return max_profit
 
 
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        buy_day = 0
+        sell_day = 1
+        max_profit = 0
+
+        while sell_day < len(prices):
+            buy = prices[buy_day]
+            sell = prices[sell_day]
+
+            if buy > sell:
+                buy_day = sell_day
+            else:
+                max_profit = max(max_profit, sell - buy)
+            sell_day += 1
+        
+        return max_profit
+
+
 
