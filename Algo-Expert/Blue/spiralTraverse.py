@@ -11,11 +11,36 @@
 
 def spiralTraverse(array):
     # Write your code here.
-    r_min, r_max = 0, len(array)
-    c_min, c_max = 0, len(array[0])
-    max_steps = (len(array) + 1) * (len(array[0]) + 1)
+    r_min, r_max = 0, len(array) - 1 
+    c_min, c_max = 0, len(array[0]) - 1 
+    max_steps = (len(array)) * (len(array[0]))
 
     spiral_traverse = []
-    for r in range(r_max):
+    steps = 0
 
-    pass
+    while steps < max_steps:
+        for right in range(c_min, c_max + 1):
+            spiral_traverse.append(array[r_min][right])
+            steps += 1
+        r_min += 1
+        if steps >= max_steps:
+            break
+        for down in range(r_min, r_max + 1):
+            spiral_traverse.append(array[down][c_max])
+            steps += 1
+        c_max -= 1
+        if steps >= max_steps:
+            break
+        for left in range(c_max, c_min - 1, -1):
+            spiral_traverse.append(array[r_max][left])
+            steps += 1
+        r_max -= 1
+        if steps >= max_steps:
+            break
+        for up in range(r_max, r_min - 1, -1):
+            spiral_traverse.append(array[up][c_min])
+            steps += 1
+        c_min += 1
+
+
+    return spiral_traverse
