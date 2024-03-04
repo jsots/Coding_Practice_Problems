@@ -31,8 +31,13 @@ class Solution:
         return prev
 
 
+# Questions:
+# How do we handle an empty list?
 
-# Head should point to none, then the next node should point to head. 
+
+# Head should point to none, then the next node should point to head.
+# Have something to keep track of next, then replace next with the previous. Prev becomes current. Current becomes the saved next node.
+# Return the previous
 
 class Solution(object):
     def reverseList(self, head):
@@ -50,3 +55,6 @@ class Solution(object):
             cur = temp
         
         return prev
+
+# O(n) for time because you iterate through the list. 
+# O(1) for space, it will be just as long.
