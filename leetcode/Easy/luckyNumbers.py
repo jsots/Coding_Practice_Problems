@@ -39,6 +39,6 @@ class Solution(object):
         return lucky
 
 # O(n^2) for time
-# O(n) for space
+# O(n + m) for space
 
 
