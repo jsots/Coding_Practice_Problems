@@ -29,7 +29,6 @@ class Solution(object):
                     r_min = matrix[r][c]
                     r_min_col = c
                     potential_lucky = r_min
-            print(r_min)
             for r_2 in range(len(matrix)):
                 potential_lucky = max(potential_lucky, matrix[r_2][r_min_col])
                 print("potential----->", potential_lucky)
@@ -38,5 +37,8 @@ class Solution(object):
                 lucky.append(r_min)
         
         return lucky
+
+# O(n^2) for time
+# O(n) for space
 
 
