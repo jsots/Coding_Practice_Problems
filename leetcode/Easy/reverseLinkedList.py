@@ -32,3 +32,21 @@ class Solution:
 
 
 
+# Head should point to none, then the next node should point to head. 
+
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        cur = head
+        prev = None
+
+        while cur:
+            temp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = temp
+        
+        return prev
