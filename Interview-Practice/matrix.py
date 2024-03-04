@@ -21,11 +21,10 @@ def stringMatrix(string, r, c):
     while i < len(string):
         row = []
         for j in range(i, i + r):
-            if j<len(string):
+            if j < len(string):
                 row.append(string[j].lower())
             else:
                 break
-            print(row)
         if len(row) == r:
             ans.append(row)
         else:
@@ -47,3 +46,7 @@ def stringMatrix(string, r, c):
 
 print(stringMatrix("Hello", 3, 2))
 print(stringMatrix("tank", 3, 2))
+
+# Big O
+# Time - O(r * c)
+# Space - O(r * c)
